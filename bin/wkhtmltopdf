@@ -11,6 +11,7 @@ case RUBY_PLATFORM
     raise "This platform isn't supported."
 end
 
+require 'pathname'
 path = Pathname.new(__FILE__).dirname.join(filename).to_s
 args = $*.map {|o| o.include?(" ") ? "'#{o}'" : o }
 
